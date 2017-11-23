@@ -2,33 +2,22 @@
   <h2>本の登録</h2>
 </div>
 
-<form action="" method="post" accept-charset="utf-8">
-  <div class="row bt-margin">
-    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-img">
-      <img src="<%= @book_data['image'] %>" alt="画像は見つかりませんでした">
-    </div>
-    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
-  </div>
-
-  <div class="row bt-margin">
+<form action="/register/save" method="post" accept-charset="utf-8">
+  <div class="row">
     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      <input type="text" class="form-control" id="book_title" name="book_title" placeholder="本のタイトル" value="<%= @book_data['title'] %>">
-      <label class="validate_error" id="inputid_error"></label>
+      <div class="search-img bt-margin">
+        <img src="<%= @book_data['image'] %>" alt="画像は見つかりませんでした">
+      </div>
+      <input type="text" class="form-control bt-margin" id="book_title" name="book_title" placeholder="本のタイトル" value="<%= @book_data['title'] %>">
+      <!-- <label class="validate_error" id="inputid_error"></label> -->
+      <input type="text" class="form-control bt-margin" id="book_author" name="book_author" placeholder="著者名" value="<%= @book_data['author'] %>">
+      <input type="number" class="form-control bt-margin" id="book_number" name="book_number" placeholder="巻数" min="1">
+      <input type="text" class="form-control bt-margin" id="book_isbn" name="book_isbn" value="<%= @book_data['isbn'] %>" readonly>
+      <div class="centered">
+        <button type="sbumit">登録</button>
+      </div>
     </div>
     <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
   </div>
-
-  <div class="row bt-margin">
-    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <input type="text" class="form-control" id="author" name="author" placeholder="著者名" value="<%= @book_data['author'] %>">
-      </div>
-    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
-  </div>
-  <div class="centered">
-    <button type="sbumit">登録</button>
-  </div>
-
 </form>

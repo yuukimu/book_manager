@@ -1,4 +1,6 @@
 require 'open-uri'
+require_relative '../lib/db_func.rb'
+require_relative '../model/books.rb'
 
 class Register < Sinatra::Base
 
@@ -23,10 +25,27 @@ class Register < Sinatra::Base
       @message = '本の情報が見つかりませんでした。'
       erb :'register/manual'
     else
+      @book_data['isbn'] = isbn
       erb :'register/search'
     end
   end
 
+  post '/register/save' do
+    db = DBFunc.new
+    book = Books.new
+
+    title = params['book_title']
+    author = params['book_author']
+    number = params['book_number'].empty? ? nil : params['book_number'].to_i
+    isbn = params['book_isbn'].empty? ? nil : params['book_isbn']
+    
+    args = [title, number, author, isbn, 'test_user']
+    book.insert(db.get_client, args)
+    db.disconnect
+    redirect to('/register')
+  end
+
+private
   def parse_json(json)
     result = JSON.parse(json);
     if result['totalItems'].to_i == 0
@@ -40,7 +59,5 @@ class Register < Sinatra::Base
     puts data
     return data
   end
-
-  private :parse_json
 
 end

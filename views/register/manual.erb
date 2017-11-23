@@ -5,8 +5,8 @@
   <% end %>
 </div>
 
-<form action="" method="post" accept-charset="utf-8">
-<div class="row">
+<form action="/register/save" method="post" accept-charset="utf-8">
+  <div class="row">
     <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
       <div>
         <div class="panel panel-info">
@@ -25,8 +25,9 @@
       <input type="text" class="form-control bt-margin" id="book_title" name="book_title" placeholder="本のタイトル">
       <!-- <label class="validate_error bt-margin" id="inputid_error"></label> -->
 
-      <input type="text" class="form-control  bt-margin" id="author" name="author" placeholder="著者名">
-      <input type="number" class="form-control bt-margin" id="number" name="number" placeholder="巻数" min="1">
+      <input type="text" class="form-control  bt-margin" id="book_author" name="book_author" placeholder="著者名">
+      <input type="number" class="form-control bt-margin" id="book_number" name="book_number" placeholder="巻数" min="1">
+      <input type="text" class="form-control bt-margin" id="book_isbn" name="book_isbn" placeholder="isbn">
 
       <div class="centered">
         <button type="sbumit">登録</button>
