@@ -1,0 +1,37 @@
+<div class="centered bt-margin">
+  <h2>本の登録</h2>
+  <% if (defined? @message) != nil  %>
+    <label style="color: red;"><%= @message %></label>
+  <% end %>
+</div>
+
+<form action="" method="post" accept-charset="utf-8">
+<div class="row">
+    <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+      <div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h5 class="panel-title">登録したタイトル一覧</h5>
+          </div>
+          <div class="panel-body">
+            <ul id="title-list">
+              <li><a class="titles" href="javascript:void(0)">nginx実践ガイド</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <input type="text" class="form-control bt-margin" id="book_title" name="book_title" placeholder="本のタイトル">
+      <!-- <label class="validate_error bt-margin" id="inputid_error"></label> -->
+
+      <input type="text" class="form-control  bt-margin" id="author" name="author" placeholder="著者名">
+      <input type="number" class="form-control bt-margin" id="number" name="number" placeholder="巻数" min="1">
+
+      <div class="centered">
+        <button type="sbumit">登録</button>
+      </div>
+    </div>
+    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
+  </div>
+</form>

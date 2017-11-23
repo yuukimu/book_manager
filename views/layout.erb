@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title><%= @title %></title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/mybootstrap.css">
+</head>
+<body>
+  <header>
+    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><b>BOOK MANAGER</b></a>
+      </div>
+      <% if @login %>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">シミュレーション</a></li>
+            <li><a href="#">避難訓練</a></li>
+            <li><a href="#">振り返り</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">ログアウト</a></li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">新規登録</a></li>
+            <li><a href="#">ログイン</a></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </header>
+  <div class="wrapper">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+  <script src="/js/jquery-3.2.1.js"r></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

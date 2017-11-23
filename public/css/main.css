@@ -1,0 +1,43 @@
+body {
+  padding-top: 55px;
+  background-color: white;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 600px; 
+}
+
+.centered {
+    text-align: center;
+}
+
+hr {
+  color: gray !important;
+  border-width: 2px 0 0 0 !important;
+}
+
+.menu-list {
+  vertical-align: bottom;
+}
+
+.bt-margin {
+  margin-bottom: 2em;
+}
+
+.search-img {
+  text-align: center;
+}
+
+#title-list {
+  list-style:none;
+  padding-left: 0.5em;
+}
+
+.titles:hover {
+  text-decoration: none;
+}
+
+#number {
+  width: 100px;
+}
